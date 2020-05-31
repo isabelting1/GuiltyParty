@@ -1,3 +1,5 @@
+ 
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -8,6 +10,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sarah extends Characters
 {
+    public Sarah(){
+        longHair= true;
+        girlGender = true;
+        tallHeight = false;
+        thinWeight = true;
+    }
     /**
      * Act - do whatever the Sarah wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
