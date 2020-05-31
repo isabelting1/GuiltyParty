@@ -12,6 +12,9 @@ public class Characters extends Actor
     protected boolean tallHeight;
     protected boolean thinWeight; 
     protected boolean girlGender; 
+    protected int charInt; 
+    static protected boolean[] testimony = new boolean[5];
+    
     /**
      * Act - do whatever the Characters wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,28 +22,19 @@ public class Characters extends Actor
     
     public void act() 
     {
-        canGiveTestimony();
+        if (canGiveTestimony()) {
+            giveTestimony();
+        }
     }   
+    
     public boolean canGiveTestimony() {
-        if (Greenfoot.mousePressed(this)) {
-            Confirm confirm = new Confirm();
-            Cancel cancel = new Cancel();
-            getWorld().addObject(confirm,800,400);
-            getWorld().addObject(cancel,800,450);
-            if (cancel.isClicked() || confirm.isClicked()) {
-                cancel.remove();
-                confirm.remove();
-                
-                getWorld().showText("Gone",100,100);
-
-                boolean clicked = false;
-                if (confirm.isClicked()) {
-                    clicked = true;
-                }
-                
-                return clicked;
-            }
+        if (Greenfoot.mousePressed(this) || testimony[charInt]) {
+           return true;
         }
         return false;
+    }
+    
+    public void giveTestimony(){
+    
     }
 }
